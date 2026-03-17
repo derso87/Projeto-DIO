@@ -25,9 +25,14 @@ Rede: Host-Only (Isolada)
 
 ## Execução
 
-1 - Worlists - Comecei criando as wordlists usuario.txt e senhas.txt
-
-
-
+1 - Worlists
+Comecei criando as wordlists usuario.txt e senhas.txt
 ![Acesso FTP](./images/01.png)
 
+2. Ataque ao Serviço SMB (Portas 139/445)
+
+Utilizei o módulo smbnt do Medusa para realizar o brute force contra o serviço de compartilhamento de arquivos.
+
+Comando: medusa -h 192.168.56.101 -U usuarios.txt -P senhas.txt -M smbnt
+Resultado (Senha Encontrada):
+![Acesso FTP](./images/02.png)
