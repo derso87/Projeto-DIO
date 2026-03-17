@@ -25,11 +25,12 @@ Rede: Host-Only (Isolada)
 
 ## Execução
 
-1 - Worlists
+## 1 - Wordlists
+
 Comecei criando as wordlists usuario.txt e senhas.txt
 ![Acesso FTP](./images/01.png)
 
-2. Ataque ao Serviço SMB (Portas 139/445)
+## 2. Ataque ao Serviço SMB (Portas 139/445)
 
 Utilizei o módulo smbnt do Medusa para realizar o brute force contra o serviço de compartilhamento de arquivos.
 
@@ -42,7 +43,8 @@ Validação do Acesso: Após encontrar a senha, validei o acesso listando os com
 Comando: smbclient -L //192.168.56.101/ -U msfadmin
 ![Acesso FTP](./images/03.png)
 
-3. Ataque ao Serviço FTP (Porta 21)
+## 3. Ataque ao Serviço FTP (Porta 21)
+
 O mesmo processo foi aplicado ao protocolo FTP para demonstrar a vulnerabilidade em múltiplos serviços.
 
 Resultado (Senha Encontrada):
@@ -54,7 +56,8 @@ Validação do Acesso: Login realizado com sucesso no servidor de arquivos via t
 Comando: ftp 192.168.56.101
 ![Acesso FTP](./images/05.png)
 
-4. Ataque a Aplicação Web (DVWA)
+## 4. Ataque a Aplicação Web (DVWA)
+
 O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
 
 Comando: medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \ -m PAGE: "/dvwa/login.php" \ -m FORM: "username=^USER^&password=^PASS^&Login=Login" \ -m "FAIL=Login failed" -t 6
