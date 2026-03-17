@@ -66,3 +66,7 @@ Resultado Medusa Web:
 
 Login Efetuado com Sucesso:
 ![Acesso FTP](./images/07.png)
+
+## 5. Conclusão
+
+O laboratório demonstrou como falhas simples, como senhas fracas e protocolos mal configurados, podem comprometer a segurança dos sistemas. Para reduzir esses riscos, é fundamental adotar boas práticas como políticas de senhas seguras, bloqueio de contas após tentativas inválidas, desativação de protocolos antigos e uso de autenticação multifator. Além disso, a segurança da informação deve ser tratada como um processo contínuo, com atualização e monitoramento constantes.
